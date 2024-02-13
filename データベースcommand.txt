@@ -1,0 +1,42 @@
+
+
+// ================ creates ================
+create table userbook(
+ username varchar(254) primary key,
+ password char(64) not null
+);
+
+create table idbook(
+ id int,
+ lat real not null,
+ lng real not null,
+ name char(254) not null,
+ address char(254),
+ primary key (id)
+);
+
+
+create table likebook(
+ id int,
+ username varchar(254),
+ primary key (id),
+ foreign key (id) references idbook(id),
+ foreign key (username) references userbook(username)
+);
+
+create table imagebook(
+ id int,
+ image bytea,
+ primary key (id),
+ foreign key (id) references idbook(id)
+);
+
+create table ratebook(
+ id int,
+ comment text,
+ rate int not null,
+ primary key (id),
+ foreign key (id) references idbook(id)
+);
+ 
+
