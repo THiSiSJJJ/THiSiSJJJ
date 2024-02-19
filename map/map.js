@@ -177,6 +177,7 @@ async function submit_rate()
 	const comment = document.getElementById("input_comment");
 	const img_list = document.getElementById("input_img");
 	const formData = new FormData();
+	if(!location_id.value) return;
 	formData.append("id", location_id.value);
 	formData.append("rate", rate.value);
 	formData.append("comment", comment.value);
