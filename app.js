@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 const quser = require('./query-user');
 const qlocation = require('./query-location');
 const constants = require('./constants');
