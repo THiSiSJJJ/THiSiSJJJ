@@ -87,7 +87,10 @@ router.get('/location', checkAuth, async (req, res) => {
 router.post('/rate', checkAuth, async (req, res) =>
 {
 	if(!('id' in req.body && 'rate' in req.body)) res.status(400).end();
-	else await qlocation.rate(req.body.id, req.session.passport.user.username, req.body.rate, req.body.comment, req.files);
+	else
+	{
+		if(req.body.id !== null) await qlocation.rate(req.body.id, req.session.passport.user.username, req.body.rate, req.body.comment, req.files);
+	}
 	res.send("success");
 });
 
