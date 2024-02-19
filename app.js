@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const quser = require('./query-user');
+const qlocation = require('./query-location');
+const constants = require('./constants');
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -24,7 +26,9 @@ app.use(session(session_opt));
 
 app.use('/',express.static(path.join(__dirname,'./public')));
 
-app.get('/',(req,res) => { res.redirect('./main/main_map.html'); } );
+
+app.get('/',(req,res) => { res.redirect(constants.pages.index); } );
+
 
 app.get('/ok',(req,res) =>
 {

@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+} /*  үсэгнүүдийн фонт */ 
+nav{
+    position: fixed;
+    background: #000;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 12;
+} /* дээд талын хар урт хайрцаг */
+
+nav .menu{
+    color:#fff;
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+} /* дээд талын хар урт хайрцагны үгнүүдийн байршил */
+
+.menu .logo a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 60px;
+    font-weight: 600;
+} /* дээд талын хар урт хайрцагны лого-ны байршил */
+
+.menu ul{
+    display: inline-flex;
+} /* дээд талын хар урт үгнүүдийг нэг мөрөнд оруулах */
+
+.menu ul li{
+    list-style: none;
+    margin-left: 7px;
+  } /* дээд талын хар урт үгнүүдийн хооронд зай авах */
+
+.menu ul li a{ /* */
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+} /* дээд талын хар урт үгнүүдийн өөрчлөлт  */
+
+.middle{
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+} /* middle-ийн байршил */
+
+.middle .title{
+    color: #000;
+    font-size: 55px;
+    font-weight: 600;
+}/*title -ийн үсэгийн фонт хэмжээ */
+
+.middle .sub_title{
+    color: #000;
+    font-size: 52px;
+    font-weight: 600;
+}/*sub_title -ийн үсэгийн фонт хэмжээ */
+
+.middle .btns .type{ 
+    height: 55px;
+    width: 170px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 10px;
+    border: 2px solid #000  ;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+} /* Log in & New account өөрчлөлт */
+.middle .btns button:first-child{
+    color: #000;
+    background: #fff;
+} /* эхний button */
+.middle .btns button:last-child{
+    background: white;
+    color: black;
+} /* хоёр дэх button */
+.middle .btns button{ 
+    height: 55px;
+    width: 170px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 10px;
+    border: 2px solid #000  ;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+} /* Log in & New account өөрчлөлт */

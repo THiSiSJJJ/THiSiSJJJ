@@ -20,21 +20,41 @@ async function isExisted(username)
 	return (count == 1);
 }
 
+async function follow(username, follow)
+{
+	const follow_existence = await isExisted(follow);
+	console.log(follow_existence);
+	if(!follow_existence) return;
+	const check = "select count(*) from followbook where username=$1 and follow=$2;";
+	const count = (await query(check, [username, follow])).rows[0]['count'];
+	console.log(count);
+	if(count == 1) return;
+	const command = "insert into followbook values ($1, $2);";
+	await query(command, [username, follow]);
+}
+
 async function add(username,password)
 {
 	const ret = await isExisted(username);
 	if(ret) return false;
 	const command = "insert into userbook values ($1, $2);";
 	const hashed_password = ''+crypto.createHash('sha256').update(password+secret).digest('hex');
-	const result = await query(command,[username,hashed_password])
+	const result = await query(command,[username,hashed_password]);
+	
+	await follow(username, username);
+	
 	return true;
 }
+
+
 
 const query_user = 
 {
 	check:check,
 	add:add,
-	isExisted:isExisted
+	isExisted:isExisted,
+	follow: follow
 };
+
 
 module.exports = query_user;

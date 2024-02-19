@@ -7,11 +7,11 @@ create table userbook(
 );
 
 create table idbook(
- id int,
+ id int generated always as identity,
  lat real not null,
  lng real not null,
- name char(254) not null,
- address char(254),
+ name varchar(254) not null,
+ address varchar(254),
  primary key (id)
 );
 
@@ -19,24 +19,36 @@ create table idbook(
 create table likebook(
  id int,
  username varchar(254),
- primary key (id),
  foreign key (id) references idbook(id),
  foreign key (username) references userbook(username)
 );
 
 create table imagebook(
  id int,
+ ref int generated always as identity,
  image bytea,
- primary key (id),
+ primary key (id, ref),
  foreign key (id) references idbook(id)
 );
 
 create table ratebook(
  id int,
- comment text,
+ username varchar(254),
  rate int not null,
- primary key (id),
- foreign key (id) references idbook(id)
+ time_stamp timestamp not null,
+ comment text,
+ imgref text,
+
+ foreign key (id) references idbook(id),
+ foreign key (username) references userbook(username)
 );
+
+create table followbook(
+ username varchar(254),
+ follow varchar(254),
+ foreign key (username) references userbook(username),
+ foreign key (follow) references userbook(username) 
+);
+
  
 

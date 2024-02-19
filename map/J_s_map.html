@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Map
+  </title>
+	<link rel="stylesheet" href="./map.css">
+</head>
+<body>
+
+	<h1>J  Map</h1>
+	<div id="follow_div">
+		<label for="input_follow">Add Follow</label>
+		<input type="text" id="input_follow" name="follow">
+		<input type="button" value="submit" id="input_follow_button" onclick="submit_follow()" />
+	</div>
+	<a href="/map/logout" id="logout"> logout </a>
+	<div id="googleMap"></div>
+	<div id="info">
+		<input type="hidden" id="location_id" />
+		<h1 id="name">location name </h1>
+		<h2 id="totalrate"> rate </h2>
+		<p id="address">address </p>
+		<h3>who has rated</h3>
+		<div id="rates_list">
+			<ul id="rates">	</ul>
+		</div>
+		<h3>your rate</h3>
+		<div>
+			<div>
+				<label for="input_rate">rate</label> <br />
+				<input name="rate" id="input_rate" type="number" require>
+			</div>
+			<div>
+				<label for="input_comment">comment</label> <br />
+				<textarea name="comment" id="input_comment"></textarea>
+			</div>
+			<div>
+				<label for="input_img">upload photo</label> <br />
+				<input id="input_img" name="img" type="file" accept="image/png, image/jpeg"  multiple />
+			</div>
+			<div>
+				<input type="button" value="submit" onclick="submit_rate()"/>
+			</div>
+		</div>
+		<h3>who like this location</h3>
+		<div id="likes_list">
+			<ul id="likes"></ul>
+		</div>
+		<div id="like_div">
+			<label for="input_like">Do you like this location?</label>
+			<input type="button" value="LIKE" id="input_like" onclick="submit_like()" /> 
+		</div>
+	</div>
+
+	<script src="./map.js"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-HIDCf6gCg9zvout8C8c5v7pfmGxoCkk&callback=initMap"></script>
+</body>
+</html>

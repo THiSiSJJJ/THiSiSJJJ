@@ -1,11 +1,12 @@
 const {Pool} = require('pg');
 
-const connectionString = 'postgres://root:KeER6YX7Ljy5DieIAO57A5d0maiTTbJ9@dpg-cmrr28g21fec739ta900-a.singapore-postgres.render.com/test_database_1tpc'
+//const connectionString = 'postgres://root:KeER6YX7Ljy5DieIAO57A5d0maiTTbJ9@dpg-cmrr28g21fec739ta900-a.singapore-postgres.render.com/test_database_1tpc';
+const connectionString = 'postgres://root:KeER6YX7Ljy5DieIAO57A5d0maiTTbJ9@dpg-cmrr28g21fec739ta900-a/test_database_1tpc';
 const pool = new Pool(
 {
 	connectionString:connectionString,
 	max:5,
-	idleTimeoutMillis:1000*10,
+	idleTimeoutMillis:1000*60,
 	ssl:true
 });
 

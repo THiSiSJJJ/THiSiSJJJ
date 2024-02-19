@@ -1,0 +1,46 @@
+html
+{
+	display: block;
+	height: 100%;
+}
+body
+{
+	display: block;
+	height: 95%;
+	width: 100%;
+	position: relative;
+}
+
+div#googleMap
+{
+	display: block;
+	width: 75%;
+	height: 90%;
+	position: absolute;
+	top:5%;
+	left:23%;
+}
+
+div#info
+{
+	width:20%;
+	height:90%;
+	border: 2px solid #000;
+	position: absolute;
+	top: 5%;
+	left:1%;
+}
+
+ul#rates_list
+{
+	width: 20%;
+	height: 20%;
+	overflow: scroll,
+}
+
+ul#like_list
+{
+	width: 20%;
+	height: 20%;
+	overflow: scroll,
+}
