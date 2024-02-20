@@ -200,7 +200,7 @@ async function submit_like()
 	const location_id = document.getElementById("location_id");
 	const formData = new FormData();
 	formData.append("id", location_id.value);
-	
+	if(!location_id.value) return;
 	
 	await fetch('/map/like/',{
 		method: "POST",
